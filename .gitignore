@@ -1,0 +1,13 @@
+node_modules
+*.log
+
+# Sass
+/App/style/**/*.map
+*.scssc
+*.sassc
+
+# Yarn
+yarn-error.log
+
+#VSCode
+.vscode/settings.json

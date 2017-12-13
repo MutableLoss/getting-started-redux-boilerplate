@@ -1,0 +1,23 @@
+// Reset browser css
+@import 'reset';
+
+@import 'variable';
+@import '~foundation-sites/scss/util/util';
+@import 'settings';
+@import '~foundation-sites/scss/foundation';
+
+// import '~foundation-sites/scss/motioncd -ui';
+
+@include foundation-everything;
+
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
+
+// Variables
+@import 'mixins';
+// @import '_functions';
+
+// Globals
+@import 'global';
+
+
