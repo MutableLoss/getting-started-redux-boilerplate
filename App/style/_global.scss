@@ -1,6 +1,11 @@
 .btn-light {
   background: $base-text;
   color: $base-back;
+
+  &:hover,
+  &:focus { 
+    background-color: darken($base-back, 20%);
+  }
 }
 
 .light-scroll {
