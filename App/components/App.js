@@ -19,18 +19,17 @@ export default class App extends Component {
   }
 
   counterUp = () => {
-
+    this.setState({counter: this.state.counter + 1})
   }
 
   counterDown = () => {
-
+    this.setState({counter: this.state.counter - 1})
   }
 
   getUsers = () => {
     fetch('https://api.github.com/users')
     .then(res => res.json())
     .then(result => {
-      console.log(result)
       this.setState({userList: result})
     }).catch(error => {
       throw error
@@ -49,11 +48,13 @@ export default class App extends Component {
           </div>
           <button 
             className="button btn-light"
+            onClick={() => this.counterUp()}
           >
             +
           </button>
           <button 
             className="button btn-light"
+            onClick={() => this.counterDown()}
           >
             -
           </button>
