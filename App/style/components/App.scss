@@ -1,6 +1,9 @@
 
 .container {
-
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
   text-align: center;
   width: $base-width;
 
@@ -21,7 +24,7 @@
 .counter {
   button {
     margin: $base-margin / 4;
-    width: 50px;
+    width: $counter-width;
 
     .counter-number {
       // 
@@ -29,13 +32,41 @@
 
     i {
       color: $base-back;
-      font-size: 30px;
-      font-weight: 600;
+      font-size: $button-font;
+      font-weight: $bold-weight;
     }
   }
+}
+
+.user-container {
+  width: 100%;
 
   .user-list {
-    
+    @include flexbox;
+    @include flex-direction(row);
+    margin: $base-margin;
+    box-shadow: 2px $scroll-shadow;
+
+    .users {
+      @include flexbox;
+      @include justify-content(flex-start);
+      @include align-content(flex-start);
+      margin: 0;
+      overflow-x: scroll;
+      padding: $base-padding;
+    }
+  }
+}
+
+
+.user-object {
+  list-style-type: none;
+  margin: $base-margin;
+  min-width: $object-width;
+
+  img {
+    height: $object-size;
+    width: $object-size;
   }
 }
 
@@ -44,6 +75,6 @@
   width: $app-body-width;
 
   .progress-bar {
-    width: 50%;
+    width: $progress-width;
   }
 }
