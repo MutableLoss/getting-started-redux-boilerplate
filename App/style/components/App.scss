@@ -1,0 +1,49 @@
+
+.container {
+
+  text-align: center;
+  width: $base-width;
+
+  .body {
+    background-color: $base-back;
+    border-radius: $base-radius;
+    color: $base-text;
+    margin: $base-margin auto;
+    padding: $base-padding;
+    width: $app-body-width;
+
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+.counter {
+  button {
+    margin: $base-margin / 4;
+    width: 50px;
+
+    .counter-number {
+      // 
+    }
+
+    i {
+      color: $base-back;
+      font-size: 30px;
+      font-weight: 600;
+    }
+  }
+
+  .user-list {
+    
+  }
+}
+
+.progress {
+  margin: auto;
+  width: $app-body-width;
+
+  .progress-bar {
+    width: 50%;
+  }
+}
