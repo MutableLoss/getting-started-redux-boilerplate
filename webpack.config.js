@@ -63,9 +63,9 @@ export default {
           loader: 'url-loader',
           options: {
             limit: 10000,
-            mimetype: 'application/font-woff',
+            mimetype: 'application/font-woff'
           }
-        },
+        }
       },
       {
         test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
@@ -73,7 +73,7 @@ export default {
           loader: 'url-loader',
           options: {
             limit: 10000,
-            mimetype: 'application/font-woff',
+            mimetype: 'application/font-woff'
           }
         }
       },
@@ -154,5 +154,5 @@ export default {
         .on('error', spawnError => console.error(spawnError));
       }
     }
-  },
+  }
 }
