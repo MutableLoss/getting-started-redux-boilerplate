@@ -4,8 +4,8 @@ import DashboardPlugin from 'webpack-dashboard/plugin';
 import { dependencies as externals } from './package.json';
 
 export default {
-  externals: [
-    'foundation-sites'
+  entry: [
+    './App/index.js'
   ],
   module: {
     rules: [{
@@ -17,6 +17,18 @@ export default {
           cacheDirectory: true
         }
       }
+    },
+    {
+      test: /\.(?:sass|scss)$/,
+      use: [
+        'style-loader',
+        'css-loader', {
+          loader: 'sass-loader',
+          query: {
+            includePaths: [path.resolve(__dirname, 'node_modules')]
+          }
+        }
+      ]
     }]
   },
   output: {
@@ -37,7 +49,6 @@ export default {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
     }),
-    new DashboardPlugin(),
     new webpack.NamedModulesPlugin()
   ]
 };
