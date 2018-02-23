@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 export default class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -14,20 +14,21 @@ export default class ErrorBoundary extends React.Component {
   }
 
   render() {
-    if (this.state.errorInfo) {
-      // Error path
+    if(this.state.errorInfo) {
       return (
-        <div>
-          <h2>Something went wrong.</h2>
-          <details style={{ whiteSpace: 'pre-wrap' }}>
-            {this.state.error && this.state.error.toString()}
-            <br />
-            {this.state.errorInfo.componentStack}
-          </details>
-        </div>
+        <Fragment>
+          <div>
+            <h2>Something went wrong.</h2>
+            <details style={{ whiteSpace: 'pre-wrap' }}>
+              {this.state.error && this.state.error.toString()}
+              <br />
+              {this.state.errorInfo.componentStack}
+            </details>
+          </div>
+        </Fragment>
       );
     }
     // Normally, just render children
-    return this.props.children;
+    return this.props.children
   }
 }
