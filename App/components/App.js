@@ -62,8 +62,7 @@ export default class App extends Component {
         <div className="get-user-buttons">
           <button
             className="button"
-            onClick={() => this.getUsers()}
-          >Get Users</button>
+            onClick={() => this.getUsers()}>Get Users</button>
         </div>
         {this.state.progress ?
         <div className="progress" role="progressbar" aria-valuenow={this.state.progress} aria-valuemin="0" aria-valuetext={`${this.state.progress} percent done receiving users`} aria-valuemax="100">
