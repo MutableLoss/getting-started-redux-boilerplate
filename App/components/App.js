@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import fetch from 'node-fetch'
 
-export default class App extends Component {
+import * as CounterActions from '../actions/CounterActions'
+import * as UserActions from '../actions/UserActions'
+
+class App extends Component {
   constructor() {
     super();
 
@@ -12,18 +17,6 @@ export default class App extends Component {
       loadingList: false,
       userList: []
     }
-  }
-
-  componentDidMount() {
-
-  }
-
-  counterUp = () => {
-    this.setState({counter: this.state.counter + 1})
-  }
-
-  counterDown = () => {
-    this.setState({counter: this.state.counter - 1})
   }
 
   getUsers = () => {
@@ -48,13 +41,13 @@ export default class App extends Component {
           </div>
           <button 
             className="button btn-light"
-            onClick={() => this.counterUp()}
+            onClick={() => this.props.actions.counterUp()}
           >
             +
           </button>
           <button 
             className="button btn-light"
-            onClick={() => this.counterDown()}
+            onClick={() => this.props.actions.counterDown()}
           >
             -
           </button>
@@ -62,7 +55,7 @@ export default class App extends Component {
         <div className="get-user-buttons">
           <button
             className="button"
-            onClick={() => this.getUsers()}>Get Users</button>
+          >Get Users</button>
         </div>
         {this.state.progress ?
         <div className="progress" role="progressbar">
@@ -87,3 +80,12 @@ export default class App extends Component {
     )
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(CounterActions, dispatch)
+  }
+}
+
+export default connect(mapDispatchToProps)(App);
+
