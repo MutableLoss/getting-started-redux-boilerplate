@@ -1,7 +1,7 @@
 import * as types from '../actions/ActionTypes'
 import initialState from './initialState';
 
-export default function counterReducer(state = initialState, action) {
+export default function counterReducer(state = initialState.counter, action) {
   switch(action.type) {
     case types.COUNTER_UP:
       return {

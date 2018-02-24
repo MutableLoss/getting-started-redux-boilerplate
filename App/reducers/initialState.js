@@ -1,4 +1,11 @@
 export default {
-  total: 0,
-  title: 'Our Redux App'
+  counter: {
+    total: 0,
+    title: 'Our Redux App'
+  },
+  users: {
+    progress: 0,
+    loadingList: false,
+    userList: []
+  }
 }
