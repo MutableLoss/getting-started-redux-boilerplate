@@ -14,14 +14,13 @@ export default class ErrorBoundary extends React.Component {
   }
 
   render() {
-    if(this.state.errorInfo) {
+    if(this.state.hasError) {
+      console.log(this.state.errorInfo)
       return (
         <Fragment>
           <div>
             <h2>Something went wrong.</h2>
             <details style={{ whiteSpace: 'pre-wrap' }}>
-              {this.state.error && this.state.error.toString()}
-              <br />
               {this.state.errorInfo.componentStack}
             </details>
           </div>
