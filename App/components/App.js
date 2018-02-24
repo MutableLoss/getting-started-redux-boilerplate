@@ -10,8 +10,6 @@ class App extends Component {
     super();
 
     this.state = {
-      title: 'Test App',
-      counter: 0,
       progress: 0,
       loadingList: false,
       userList: []
@@ -32,11 +30,11 @@ class App extends Component {
     return (
       <div className="container">
         <div className="body">
-          <h1>{this.state.title}</h1>
+          <h1>{this.props.state.title}</h1>
         </div>
         <div className="body counter">
           <div className="counter-number">
-            <h1>{this.state.counter}</h1>
+            <h1>{this.props.state.total}</h1>
           </div>
           <button 
             className="button btn-light"
@@ -80,11 +78,17 @@ class App extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    state: state
+  }
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(CounterActions, dispatch)
   }
 }
 
-export default connect(mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
