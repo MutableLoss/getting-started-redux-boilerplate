@@ -6,6 +6,11 @@ import { bindActionCreators } from 'redux'
 import * as CounterActions from '../actions/CounterActions'
 import * as UserActions from '../actions/UserActions'
 
+import Text from './visual/Text'
+import Button from './visual/Button'
+import ProgressBar from './visual/ProgressBar'
+import UserList from './visual/UserList'
+
 class App extends Component {
   constructor() {
     super();
@@ -14,49 +19,42 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="body">
-          <h1>{this.props.state.counter.title}</h1>
-        </div>
+        <Text
+          text={this.props.state.counter.title}
+          className="body"
+        />
         <div className="body counter">
-          <div className="counter-number">
-            <h1>{this.props.state.counter.total}</h1>
-          </div>
-          <button 
+          <Text 
+            text={this.props.state.counter.total}
+            className="counter-number"
+          />
+          <Button
+            text="+"
             className="button btn-light"
             onClick={() => this.props.actions.counter.counterUp()}
-          >
-            +
-          </button>
-          <button 
+          />
+          <Button 
+            text="-"
             className="button btn-light"
             onClick={() => this.props.actions.counter.counterDown()}
-          >
-            -
-          </button>
+          />
         </div>
         <div className="get-user-buttons">
-          <button
+          <Button
+            text="Get Users"
             className="button"
-          onClick={() => this.props.actions.users.userFetch()}>Get Users</button>
+            onClick={() => this.props.actions.users.userFetch()}
+          />
         </div>
         {this.props.state.users.progress ?
-        <div className="progress" role="progressbar">
-        <div className="progress-meter" style={{ width: this.state.progress + '%' }} aria-valuemin="0" aria-valuetext={`${this.state.progress} percent done receiving users`} aria-valuemax="100"></div>
-
-        </div> : ''}
+          <ProgressBar
+            progress={this.props.state.users.progress}
+          /> 
+        : ''}
         <div className="user-container">
-          <div className="user-list">
-            {this.props.state.users.userList.length > 0 ?
-              <ul className="users light-scroll">
-                {this.props.state.users.userList.map((object, index) => (
-                  <li key={index} className="user-object">
-                    <p>{object.login}</p>
-                    <img src={object.avatar_url} />
-                  </li>
-                ))}
-              </ul> : ''
-            }
-          </div>
+          <UserList
+            list={this.props.state.users.userList}
+          />
         </div>
       </div>
     )
@@ -72,14 +70,10 @@ App.propTypes = {
 
 function mapStateToProps(state) {
   return {
-<<<<<<< 7b39249cb654940b0b7588fb533bdaa05ee44b5d
-    state: state.counter
-=======
     state: {
       counter: state.counter,
       users: state.users
     }
->>>>>>> scale the app and add async actions
   }
 }
 
