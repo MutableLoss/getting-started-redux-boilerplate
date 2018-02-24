@@ -15,7 +15,6 @@ export default class ErrorBoundary extends React.Component {
 
   render() {
     if(this.state.hasError) {
-      console.log(this.state.errorInfo)
       return (
         <Fragment>
           <div>
