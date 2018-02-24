@@ -5,14 +5,16 @@ import configureStore from './store/ConfigureStore'
 import { Provider } from 'react-redux'
 import App from './components/App'
 import ErrorBoundary from './components/ErrorBoundary'
+import DevTools from './containers/DevTools'
 
 const store = configureStore()
 
 render(
-  <ErrorBoundary>
-    <Provider store={store}>
+  <Provider store={store}>
+    <ErrorBoundary>
       <App />
-    </Provider>
-  </ErrorBoundary>,
+      <DevTools />
+    </ErrorBoundary>
+    </Provider>,
   document.getElementById('app')
 );
