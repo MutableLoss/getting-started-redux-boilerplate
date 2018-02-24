@@ -9,7 +9,7 @@ export function userFetch() {
       dispatch(progressChange(100));
       dispatch(userFetchSuccess(result));
     }).catch(error => {
-      dispatch(callError(error));
+      dispatch(callError(error.message));
     })
   }
 }
