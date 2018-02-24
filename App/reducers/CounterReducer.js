@@ -1,13 +1,19 @@
-import * as types from '../actions/ActionTypes'
-import initialState from './initialState';
+// import initialState from './initialState';
 
-export default function counterReducer(state = initialState.counter, action) {
+const initialState = {
+  counter: {
+    total: 0,
+    title: 'Our Redux App'
+  }
+}
+
+export default function (state = initialState.counter, action) {
   switch(action.type) {
-    case types.COUNTER_UP:
+    case 'COUNTER_UP':
       return {
         ...state, total: state.total + 1
       }
-    case types.COUNTER_DOWN:
+    case 'COUNTER_DOWN':
       return {
         ...state, total: state.total - 1
       }

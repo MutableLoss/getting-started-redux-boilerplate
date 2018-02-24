@@ -1,4 +1,3 @@
-import * as types from './ActionTypes'
 import fetch from 'node-fetch'
 
 export function userFetch() {
@@ -16,17 +15,17 @@ export function userFetch() {
 }
 
 export function userFetchStart() {
-  return { type: types.USER_FETCH_START }
+  return { type: 'USER_FETCH_START' }
 }
 
 export function userFetchSuccess(data) {
-  return { type: types.USER_FETCH_SUCCESS, data }
+  return { type: 'USER_FETCH_SUCCESS', data }
 }
 
 export function progressChange(data) {
-  return { type: types.USER_PROGRESS, data }
+  return { type: 'USER_PROGRESS', data }
 }
 
 export function callError(error) {
-  return { type: types.CALL_ERROR, error }
+  return { type: 'CALL_ERROR', error }
 }
