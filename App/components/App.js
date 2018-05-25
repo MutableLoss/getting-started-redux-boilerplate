@@ -66,7 +66,8 @@ export default class App extends Component {
         </div>
         {this.state.progress ?
         <div className="progress" role="progressbar">
-          <div className="progress-meter" style={{ width: this.props.state.users.progress + '%' }} aria-valuemin="0" aria-valuetext={`${this.props.state.users.progress} percent done receiving users`} aria-valuemax="100"></div>
+        <div className="progress-meter" style={{ width: this.state.progress + '%' }} aria-valuemin="0" aria-valuetext={`${this.state.progress} percent done receiving users`} aria-valuemax="100"></div>
+
         </div> : ''}
         <div className="user-container">
           <div className="user-list">
