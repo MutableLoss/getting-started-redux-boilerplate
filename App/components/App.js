@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux'
 import fetch from 'node-fetch'
 
 import * as CounterActions from '../actions/CounterActions'
-import * as UserActions from '../actions/UserActions'
 
 class App extends Component {
   constructor() {
