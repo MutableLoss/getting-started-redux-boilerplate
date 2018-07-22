@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import fetch from 'node-fetch'
@@ -78,9 +79,16 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  counter: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    total: PropTypes.number.isRequired
+  })
+}
+
 function mapStateToProps(state) {
   return {
-    state: state
+    state: state.counter
   }
 }
 
