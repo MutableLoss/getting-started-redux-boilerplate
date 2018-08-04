@@ -26,6 +26,17 @@ export function progressChange(data) {
   return { type: 'USER_PROGRESS', data }
 }
 
+export function createError(error) {
+  return dispatch => {
+    dispatch(userError())
+    dispatch(callError(error))
+  }
+}
+
+export function userError() {
+  return { type: 'CALL_USER_ERROR' }
+}
+
 export function callError(error) {
   return { type: 'CALL_ERROR', error }
 }

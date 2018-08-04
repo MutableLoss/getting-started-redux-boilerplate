@@ -14,7 +14,7 @@ export default function (state = initialState.users, action) {
       return {
         ...state, progress: 100
       }
-    case 'CALL_ERROR':
+    case 'CALL_USER_ERROR':
       return {
         ...state, loadingList: false, progress: 0, userList: []
       }
