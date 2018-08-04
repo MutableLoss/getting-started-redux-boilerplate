@@ -1,10 +1,4 @@
-const initialState = {
-  users: {
-    progress: 0,
-    loadingList: false,
-    userList: []
-  }
-}
+import initialState from './initialState'
 
 export default function (state = initialState.users, action) {
   switch(action.type) {
