@@ -5,7 +5,7 @@ export default function userReducer(state = initialState.users, action) {
   switch(action.type) {
     case types.USER_FETCH_START:
       return {
-        ...state, loadingList: true, progress: 20
+        ...state, loadingList: true
       }
     case types.USER_FETCH_SUCCESS:
       return {

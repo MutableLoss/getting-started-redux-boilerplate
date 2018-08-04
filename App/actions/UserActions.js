@@ -4,6 +4,7 @@ import fetch from 'node-fetch'
 export function userFetch() {
   return dispatch => {
   dispatch(userFetchStart());
+  dispatch(progressChange(20));
     fetch('https://api.github.com/users')
     .then(res => res.json()).then(result => {
       dispatch(progressChange(100));
