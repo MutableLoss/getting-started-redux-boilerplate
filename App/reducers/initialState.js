@@ -7,6 +7,10 @@ const initialState = {
     progress: 0,
     loadingList: false,
     userList: []
+  },
+  errors: {
+    hasError: false,
+    message: ''
   }
 }
 
