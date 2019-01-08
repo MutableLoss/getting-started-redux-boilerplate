@@ -18,8 +18,8 @@
     "foundation-sites": "6.4.4-rc1",
     "node-fetch": "1.7.3",
     "prop-types": "15.6.0",
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-redux": "*",
     "redux": "^3.6.0"
   },
@@ -61,7 +61,7 @@
     "url-loader": "0.6.2",
     "webpack": "3.10.0",
     "webpack-dashboard": "1.0.2",
-    "webpack-dev-server": "2.9.7",
+    "webpack-dev-server": "^3.1.14",
     "webpack-hot-middleware": "^2.12.2",
     "webpack-merge": "^4.1.0"
   },
